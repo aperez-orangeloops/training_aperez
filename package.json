@@ -134,6 +134,7 @@
     "react-native-startup-time": "1.2.2",
     "react-native-svg": "12.1.0",
     "react-native-tab-view": "2.14.0",
+    "react-native-vector-icons": "^9.2.0",
     "reflect-metadata": "0.1.13",
     "regenerator-runtime": "0.13.5",
     "uuid": "7.0.3"

@@ -2,14 +2,17 @@ import {DynamicStyleSheet} from "react-native-dark-mode";
 
 export const toDoStyles = new DynamicStyleSheet({
   container: {
+    width: "100%",
     marginTop: 25.5,
     marginLeft: 16.25,
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    flexWrap : "wrap",
   },
   textS: {
-    width: 116,
-    height: 19,
+    width: 300,
+    //height: 19,
+    flexWrap: "wrap",
 
     //fontFamily: 'Roboto',
     fontStyle: "italic",
@@ -17,8 +20,6 @@ export const toDoStyles = new DynamicStyleSheet({
     fontSize: 16,
     lineHeight: 19,
     marginLeft: 8.75,
-
-    //textDecorationLine: 'line-through',
 
     color: "#000000",
   },
@@ -48,8 +49,8 @@ export const toDoStyles = new DynamicStyleSheet({
     borderRadius: 16.25,
   },
   textDone: {
-    width: 116,
-    height: 19,
+    width:300,
+    //height: 19,
 
     //fontFamily: 'Roboto',
     fontStyle: "italic",
@@ -57,6 +58,7 @@ export const toDoStyles = new DynamicStyleSheet({
     fontSize: 16,
     lineHeight: 19,
     marginLeft: 8.75,
+    flexWrap: "wrap",
 
     textDecorationLine: "line-through",
 

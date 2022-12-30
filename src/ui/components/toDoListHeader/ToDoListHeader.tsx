@@ -1,30 +1,26 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {Text, View} from "react-native";
 //import {ToDo} from "../../../core/models/ToDo";
-//import {useDynamicStyleSheet} from "react-native-dark-mode";
+import {useDynamicStyleSheet} from "react-native-dark-mode";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import {ButtonDelete} from "../../components/buttonDelete/ButtonDelete";
+import {HeaderStyles} from "./ToDoListHeader.styles";
 
 // onCompletedChange :(completed: boolean) => void
-export const ToDoListHeader = (props) => {
-  //const styles = useDynamicStyleSheet(toDoStyles);
+export const ToDoListHeader = (props:any) => {
+  const styles = useDynamicStyleSheet(HeaderStyles);
 
   return (
-    <View>
-      <Text style={styles.textoI}>{props.amount} items left </Text>
+    <View style={styles.containerHeader}>
+      <View style={styles.containerTaskTitle}>
+          <Text style={styles.textoT}>Tasks</Text>
+      </View>
+      <TouchableOpacity  onPress={() => {props.onClean()}}>
+        <ButtonDelete></ButtonDelete>
+      </TouchableOpacity>
+      <Text style={styles.textoI} >{props.amount}  {props.amount == 0 ?  "item" : "items" } left </Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  textoI: {
-    //width: 79,
-    height: 19,
 
-    //font-family: 'Roboto';
-    fontStyle: "italic",
-    fontWeight: "400",
-    fontSize: 16,
-    lineHeight: 19,
-
-    color: "#000000",
-  },
-});
