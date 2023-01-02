@@ -11,10 +11,7 @@ export const toDoStyles = new DynamicStyleSheet({
   },
   textS: {
     width: 300,
-    //height: 19,
     flexWrap: "wrap",
-
-    //fontFamily: 'Roboto',
     fontStyle: "italic",
     fontWeight: "400",
     fontSize: 16,
@@ -23,36 +20,29 @@ export const toDoStyles = new DynamicStyleSheet({
 
     color: "#000000",
   },
+  textSDark: {
+    width: 300,
+    flexWrap: "wrap",
+    fontStyle: "italic",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 19,
+    marginLeft: 8.75,
+
+    color: "#FFFFFF",
+  },
   rectangle: {
     width: 364,
     height: 1,
     backgroundColor: "#DDDDDD",
     marginTop: 25.5,
   },
-  circle: {
-    //position: 'absolute',
-    width: 32.5,
-    height: 32.5,
-    borderColor: "#888888",
-    borderWidth: 3.75,
-    borderRadius: 16.25,
-  },
   organize: {
     flexDirection: "row",
     alignItems: "center",
   },
-  circleDone: {
-    width: 32.5,
-    height: 32.5,
-    borderColor: "#ED7203",
-    borderWidth: 3.75,
-    borderRadius: 16.25,
-  },
   textDone: {
     width:300,
-    //height: 19,
-
-    //fontFamily: 'Roboto',
     fontStyle: "italic",
     fontWeight: "400",
     fontSize: 16,
@@ -63,5 +53,18 @@ export const toDoStyles = new DynamicStyleSheet({
     textDecorationLine: "line-through",
 
     color: "#000000",
+  },
+  textDoneDark: {
+    width:300,
+    fontStyle: "italic",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 19,
+    marginLeft: 8.75,
+    flexWrap: "wrap",
+
+    textDecorationLine: "line-through",
+
+    color: "#FFFFFF",
   },
 });

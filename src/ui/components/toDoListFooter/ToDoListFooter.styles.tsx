@@ -13,16 +13,34 @@ export const FooterStyles = new DynamicStyleSheet({
 
     backgroundColor: "#fff",
   },
+  footerDark: {
+    width: 394,
+    height: 110,
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexDirection: "column",
+    //alignSelf: 'flex-end',
+
+    backgroundColor: "#000000",
+  },
   buttonscontainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    //paddingVertical: 5,
-    //paddingHorizontal: 10,
-    //gap: 10,
 
     backgroundColor: "#fff",
+
+    width: 134,
+    height: 29,
+  },
+  buttonscontainerDark: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+
+    backgroundColor: "#000000",
 
     width: 134,
     height: 29,
@@ -43,16 +61,24 @@ export const FooterStyles = new DynamicStyleSheet({
   },
   button: {
     display: "flex",
-    //flexDirection: 'row',
     justifyContent: "center",
-    //alignItems: 'center',
     paddingVertical: 5,
     paddingHorizontal: 10,
-    //gap: 5,
 
     height: 29,
     marginLeft: 20,
     backgroundColor: "#fff",
+    borderRadius: 5,
+  },
+  buttonDark: {
+    display: "flex",
+    justifyContent: "center",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+
+    height: 29,
+    marginLeft: 20,
+    backgroundColor: "#000000",
     borderRadius: 5,
   },
   buttonA:{
@@ -73,8 +99,20 @@ export const FooterStyles = new DynamicStyleSheet({
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
-    color: "#000",
+    color: "#000000",
   },
+  textDark: {
+    //width: 19,
+    height: 19,
+
+    //fontFamily: 'Roboto';
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 19,
+    color: "#000000",
+  },
+  
   textN: {
     //width: 19,
     height: 19,
@@ -97,6 +135,17 @@ export const FooterStyles = new DynamicStyleSheet({
     borderWidth: 1,
     paddingHorizontal : 10,
   },
+  boxInputDark:{
+    display: "flex",
+    width: 314,
+    height: 40,
+    //marginLeft: 20,
+    backgroundColor: "#000000",
+    borderRadius: 5,
+    borderColor: "#4E4E4E",
+    borderWidth: 1,
+    paddingHorizontal : 10,
+  },
   buttonPlus:{
     display: "flex",
     width: 40,
@@ -108,5 +157,5 @@ export const FooterStyles = new DynamicStyleSheet({
   input:{
     flexDirection: "row",
     justifyContent: "space-between",
-  }
+  },
 });

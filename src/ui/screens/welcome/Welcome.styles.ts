@@ -18,12 +18,31 @@ export const themedStyles = new DynamicStyleSheet({
 
     backgroundColor: "#FFFFFF",
   },
+  containerDark:{
+    display: "flex",
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 0,
+    paddingVertical: 20,
+    borderRadius: 20,
+ 
+    width: 394,
+    height: 876,
+
+    backgroundColor: "#0000",
+
+  },
   taskStyles:{
     //alignSelf: "flex-start",
     height: 590,
     backgroundColor: "#fff",
   },
-
+  taskStylesDark:{
+    height: 590,
+    backgroundColor: "#000",
+  },
   footer: {
     width: 394,
     height: 110,
@@ -54,21 +73,28 @@ export const themedStyles = new DynamicStyleSheet({
     backgroundColor: "#DDDDDD",
     //marginTop: 25.5,
   },
+  rectangleDark:{
+    width: 394,
+    height: 1,
+    backgroundColor: "#4E4E4E",
+  },
   Empty:{
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 200,
   },
   TextE:{
-    //width: 268,
     height: 47,
-    //fontFamily: 'Roboto',
     fontStyle: "normal",
-    //fontWeight: "bold",
     fontSize: 20,
-    //lineHeight: 47,
     color: "#000000",
-  }
+  },
+  TextEDark:{
+    height: 47,
+    fontStyle: "normal",
+    fontSize: 20,
+    color: "#ffff",
+  },
 });
 
 {

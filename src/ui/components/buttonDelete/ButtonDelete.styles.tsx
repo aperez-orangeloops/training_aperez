@@ -6,7 +6,7 @@ export const buttonDeleteStyles = new DynamicStyleSheet({
   button: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 10,
     paddingHorizontal: 15,
