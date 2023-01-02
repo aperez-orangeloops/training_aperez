@@ -1,6 +1,5 @@
 import {DynamicStyleSheet} from "react-native-dark-mode";
 
-//import {variables} from "../../style/variables";
 
 export const FooterStyles = new DynamicStyleSheet({
   footer: {
@@ -9,7 +8,6 @@ export const FooterStyles = new DynamicStyleSheet({
     alignItems: "center",
     justifyContent: "space-evenly",
     flexDirection: "column",
-    //alignSelf: 'flex-end',
 
     backgroundColor: "#fff",
   },
@@ -19,7 +17,6 @@ export const FooterStyles = new DynamicStyleSheet({
     alignItems: "center",
     justifyContent: "space-evenly",
     flexDirection: "column",
-    //alignSelf: 'flex-end',
 
     backgroundColor: "#000000",
   },
@@ -47,12 +44,11 @@ export const FooterStyles = new DynamicStyleSheet({
   },
   buttonN: {
     display: "flex",
-    //flexDirection: 'row',
     justifyContent: "center",
-    //alignItems: 'center',
+
     paddingVertical: 5,
     paddingHorizontal: 10,
-    //gap: 5,
+
 
     height: 29,
     marginLeft: 20,
@@ -91,10 +87,8 @@ export const FooterStyles = new DynamicStyleSheet({
     width: 100,
   },
   text: {
-    //width: 19,
     height: 19,
 
-    //fontFamily: 'Roboto';
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,
@@ -102,10 +96,9 @@ export const FooterStyles = new DynamicStyleSheet({
     color: "#000000",
   },
   textDark: {
-    //width: 19,
+
     height: 19,
 
-    //fontFamily: 'Roboto';
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,
@@ -114,10 +107,8 @@ export const FooterStyles = new DynamicStyleSheet({
   },
   
   textN: {
-    //width: 19,
     height: 19,
 
-    //fontFamily: 'Roboto';
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,
@@ -128,7 +119,7 @@ export const FooterStyles = new DynamicStyleSheet({
     display: "flex",
     width: 314,
     height: 40,
-    //marginLeft: 20,
+
     backgroundColor: "#fff",
     borderRadius: 5,
     borderColor: "#DDDDDD",
@@ -139,7 +130,7 @@ export const FooterStyles = new DynamicStyleSheet({
     display: "flex",
     width: 314,
     height: 40,
-    //marginLeft: 20,
+
     backgroundColor: "#000000",
     borderRadius: 5,
     borderColor: "#4E4E4E",

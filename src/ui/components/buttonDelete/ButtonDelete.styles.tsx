@@ -1,6 +1,5 @@
 import {DynamicStyleSheet} from "react-native-dark-mode";
 
-//import {variables} from "../../style/variables";
 
 export const buttonDeleteStyles = new DynamicStyleSheet({
   button: {
@@ -10,7 +9,6 @@ export const buttonDeleteStyles = new DynamicStyleSheet({
     alignItems: "center",
     paddingVertical: 10,
     paddingHorizontal: 15,
-    //gap: 5,
 
     width: 96,
     height: 40,
@@ -22,7 +20,6 @@ export const buttonDeleteStyles = new DynamicStyleSheet({
     width: 41,
     height: 19,
 
-    //font-family: 'Roboto';
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,

@@ -1,4 +1,3 @@
-//import {observer} from "mobx-react";
 import * as React from "react";
 import {useState} from "react";
 import {View,ScrollView, Text} from "react-native";

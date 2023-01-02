@@ -1,6 +1,5 @@
 import {DynamicStyleSheet} from "react-native-dark-mode";
 
-//import {variables} from "../../style/variables";
 
 export const themedStyles = new DynamicStyleSheet({
   container: {
@@ -35,7 +34,6 @@ export const themedStyles = new DynamicStyleSheet({
 
   },
   taskStyles:{
-    //alignSelf: "flex-start",
     height: 590,
     backgroundColor: "#fff",
   },
@@ -49,7 +47,7 @@ export const themedStyles = new DynamicStyleSheet({
     alignItems: "center",
     justifyContent: "space-evenly",
     flexDirection: "column",
-    //alignSelf: 'flex-end',
+
 
     backgroundColor: "#DDDDDD",
   },
@@ -58,9 +56,7 @@ export const themedStyles = new DynamicStyleSheet({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    //paddingVertical: 5,
-    //paddingHorizontal: 10,
-    //gap: 10,
+
 
     backgroundColor: "#DDDDDD",
 
@@ -71,7 +67,7 @@ export const themedStyles = new DynamicStyleSheet({
     width: 394,
     height: 1,
     backgroundColor: "#DDDDDD",
-    //marginTop: 25.5,
+
   },
   rectangleDark:{
     width: 394,
@@ -97,36 +93,4 @@ export const themedStyles = new DynamicStyleSheet({
   },
 });
 
-{
-  /*
-container: {
-    flex: 1,
-    justifyContent: "center",
-  },
-  title: {
-    ...variables.headingOne,
-    marginBottom: 100,
 
-    textAlign: "center",
-  },
-  signUpButton: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    maxWidth: "80%",
-    width: 200,
-  },
-  signInHeading: {
-    marginTop: 10,
-
-    textAlign: "center",
-  },
-  signInButton: {
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  signInText: {
-    ...variables.link,
-    textAlign: "center",
-  },
-*/
-}
