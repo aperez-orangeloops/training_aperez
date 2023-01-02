@@ -3,8 +3,9 @@ import {useState} from "react";
 import {View,ScrollView, Text} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
 import {SafeAreaView} from "react-native-safe-area-context";
-import {ToDo} from "../../../core/models/ToDo";
 import { Appearance } from "react-native";
+
+import {ToDo} from "../../../core/models/ToDo";
 import {ToDoListHeader} from "../../components/toDoListHeader/ToDoListHeader";
 import {ToDoListItem} from "../../components/toDoListItem/ToDoListItem";
 import {ToDoListFooter} from "../../components/toDoListFooter/ToDoListFooter";
