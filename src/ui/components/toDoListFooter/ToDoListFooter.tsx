@@ -32,9 +32,9 @@ export const ToDoListFooter = (props: any) => {
 
   const createTask = () => {
     let t = text.trim();
-    if (t == '' || t == ' '){
+    if (t == '' || t == ' ')
       return;
-    }
+  
     task.title = t;
     task.id = id.toString();
     onToDoCreated(task);

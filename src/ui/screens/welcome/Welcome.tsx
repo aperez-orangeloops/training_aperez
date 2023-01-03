@@ -24,7 +24,7 @@ export const Welcome = () => {
 
   const itemsLeftIni = () => {
     let amount = 0;
-    taskItems.map((item, index) => {
+    taskItems.forEach((item, index) => {
       !item.completed ? amount++ : amount
     })
     return amount;
