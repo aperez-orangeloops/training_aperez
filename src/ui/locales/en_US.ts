@@ -18,6 +18,15 @@ const uiLocale: Omit<Locale, keyof CoreLocale> = {
   "Welcome-signUp": "Sign up",
   "Welcome-title": "Welcome!",
   "Welcome-welcomeMessage": "Welcome {userName}!",
+  "Welcome-NoTaskMessage" : "No tasks available",
+  "Welcome-TaskTitle" : "Tasks",
+  "Welcome-DeleteTitle" : "Clean",
+  "Welcome-ItemLeftMessage" : "left",
+  "Welcome-AllButton": "All",
+  "Welcome-ActiveButton" : "Active",
+  "Welcome-CompletedButton" : "Completed",
+  "Welcome-PlaceholderLabel" : "Write a task",
+
 };
 
 const coreLocale: Partial<CoreLocale> = {};

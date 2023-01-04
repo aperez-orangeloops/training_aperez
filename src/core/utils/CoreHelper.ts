@@ -67,6 +67,7 @@ export class CoreHelper {
   }
 
   static mergeWith(object: any, values: any, updateObject = true, customizer?: (value: any, sourceValue: any, key: any) => any): any {
+    console.log(values,customizer);
     if (updateObject) {
       return _.mergeWith(object, values, !_.isNil(customizer) ? customizer : this.mergeWithCustomizer);
     } else {

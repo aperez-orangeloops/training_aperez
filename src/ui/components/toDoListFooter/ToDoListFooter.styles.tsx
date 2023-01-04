@@ -77,17 +77,8 @@ export const FooterStyles = new DynamicStyleSheet({
     backgroundColor: "#000000",
     borderRadius: 5,
   },
-  buttonA:{
-    width: 39,
-  },
-  buttonB:{
-    width: 65,
-  },
-  buttonC:{
-    width: 100,
-  },
   text: {
-    height: 19,
+    //height: 19,
 
     fontStyle: "normal",
     fontWeight: "400",
@@ -96,9 +87,6 @@ export const FooterStyles = new DynamicStyleSheet({
     color: "#000000",
   },
   textDark: {
-
-    height: 19,
-
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,
@@ -107,8 +95,6 @@ export const FooterStyles = new DynamicStyleSheet({
   },
   
   textN: {
-    height: 19,
-
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,

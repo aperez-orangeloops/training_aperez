@@ -5,6 +5,7 @@ import {useDynamicStyleSheet} from "react-native-dark-mode";
 import {SafeAreaView} from "react-native-safe-area-context";
 import { Appearance } from "react-native";
 
+import {UIHelper} from "../../utils/UIHelper";
 import {ToDo} from "../../../core/models/ToDo";
 import {ToDoListHeader} from "../../components/toDoListHeader/ToDoListHeader";
 import {ToDoListItem} from "../../components/toDoListItem/ToDoListItem";
@@ -13,6 +14,7 @@ import {ToDoListFooter} from "../../components/toDoListFooter/ToDoListFooter";
 import {NavigatorRoutes, Routes, StackScreenProps} from "../../navigation/Routes";
 
 import {themedStyles} from "./Welcome.styles";
+
 
 
 export type WelcomeProps = StackScreenProps<NavigatorRoutes<NavigatorRoutes<Routes>["Screens"]>["Public"], "Welcome">;
@@ -88,7 +90,7 @@ export const Welcome = () => {
           </ScrollView>
           {empty &&
           (<View style={styles.Empty }>
-            <Text style={theme == 'light' ? styles.TextE : styles.TextEDark}>No tasks available</Text>
+            <Text style={theme == 'light' ? styles.TextE : styles.TextEDark}>{UIHelper.formatMessage("Welcome-NoTaskMessage")}</Text>
           </View>)
           }
         </View>

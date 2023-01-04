@@ -15,6 +15,14 @@ export type LocaleParams = CoreLocaleParams & {
   "Welcome-signUp": {};
   "Welcome-title": {};
   "Welcome-welcomeMessage": {};
+  "Welcome-NoTaskMessage": {};
+  "Welcome-TaskTitle" : {};
+  "Welcome-DeleteTitle" : {};
+  "Welcome-ItemLeftMessage" : {};
+  "Welcome-AllButton" : {};
+  "Welcome-ActiveButton" : {};
+  "Welcome-CompletedButton" : {};
+  "Welcome-PlaceholderLabel": {};
 };
 
 export type LocaleKey = keyof LocaleParams;

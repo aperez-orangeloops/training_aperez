@@ -5,10 +5,10 @@ export const buttonDeleteStyles = new DynamicStyleSheet({
   button: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
 
     width: 96,
     height: 40,
@@ -17,9 +17,7 @@ export const buttonDeleteStyles = new DynamicStyleSheet({
     borderRadius: 5,
   },
   text: {
-    width: 41,
-    height: 19,
-
+    paddingHorizontal: 2,
     fontStyle: "normal",
     fontWeight: "400",
     fontSize: 16,
