@@ -4,13 +4,14 @@ export const HeaderStyles = new DynamicStyleSheet({
     containerTaskTitle: {
         flexGrow: 1,
         backgroundColor: "#FFFFFF",
+        marginLeft: 10,
       },
       containerTaskTitleDark: {
         flexGrow: 1,
         backgroundColor: "#000000",
+        marginLeft: 10,
       },
       textoT: {
-        width: 268,
         height: 47,
 
         fontStyle: "normal",
@@ -20,7 +21,6 @@ export const HeaderStyles = new DynamicStyleSheet({
         color: "#000000",
       },
       textoTDark: {
-        width: 268,
         height: 47,
         fontStyle: "normal",
         fontWeight: "bold",
@@ -34,6 +34,7 @@ export const HeaderStyles = new DynamicStyleSheet({
         fontWeight: "400",
         fontSize: 16,
         lineHeight: 19,
+        marginLeft: 55,
     
         color: "#000000",
       },
@@ -43,14 +44,20 @@ export const HeaderStyles = new DynamicStyleSheet({
         fontWeight: "400",
         fontSize: 16,
         lineHeight: 19,
+        marginLeft: 55,
     
         color: "#FFFFFF",
       },
-      containerHeader: {
-        display: "flex",
+      topContainer:{
         flexDirection: "row",
         flexWrap: "wrap",
-        alignItems: "flex-start",
+        alignItems: "center",
+        justifyContent: "space-between",
+      },
+      containerHeader: {
+        display: "flex",
+        flexDirection: "column",
+        flexWrap: "wrap",
         paddingVertical: 0,
         paddingHorizontal: 15,
         borderRadius: 5,
@@ -62,9 +69,8 @@ export const HeaderStyles = new DynamicStyleSheet({
       },
       containerHeaderDark: {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         flexWrap: "wrap",
-        alignItems: "flex-start",
         paddingVertical: 0,
         paddingHorizontal: 15,
         borderRadius: 5,

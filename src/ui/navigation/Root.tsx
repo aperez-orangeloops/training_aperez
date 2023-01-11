@@ -12,6 +12,7 @@ import {NavigationHelper} from "./NavigationHelper";
 import {NavigatorRouteParamList, Routes} from "./Routes";
 import {Screens} from "./Screens";
 
+
 type RootSwitchParamList = NavigatorRouteParamList<Routes>;
 
 const RootStack = createStackNavigator<RootSwitchParamList>();

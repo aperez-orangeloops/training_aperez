@@ -5,13 +5,15 @@ import {createSwitchNavigator} from "./createSwitchNavigator";
 import {Main} from "./Main";
 import {Public} from "./Public";
 import {NavigatorRouteParamList, NavigatorRoutes, Routes} from "./Routes";
+import { HamburgerButton } from "../components/hamburgerButton/HamburgerButton";
+
 
 type ScreensStackParamList = NavigatorRouteParamList<NavigatorRoutes<Routes>["Screens"]>;
 
 export const ScreensSwitch = createSwitchNavigator<ScreensStackParamList>();
 
 export const Screens: React.FC = () => (
-  <ScreensSwitch.Navigator headerMode="none">
+  <ScreensSwitch.Navigator headerMode = 'none'>
     <ScreensSwitch.Screen name="AuthCheck" component={AuthCheck} />
     <ScreensSwitch.Screen name="Public" component={Public} />
     <ScreensSwitch.Screen name="Main" component={Main} />

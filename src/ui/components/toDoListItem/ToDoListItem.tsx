@@ -7,13 +7,12 @@ import {toDoStyles} from "./ToDoListItem.styles";
 import CircleDone from "../../assets/checkmark-circle-outline 1.svg"
 import Circle from "../../assets/ellipse 1.svg" 
 
-
 export const ToDoListItem = (props : any) => {
   const styles = useDynamicStyleSheet(toDoStyles);
   const {theme, todo,onCompletedChange} = props;
 
   return (
-    <View>            
+    <View>           
       <View style={styles.container }>
         <View style={styles.organize}>
           <TouchableOpacity onPress={() => {onCompletedChange(todo.completed)}}>
