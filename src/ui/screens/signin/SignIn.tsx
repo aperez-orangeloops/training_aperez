@@ -57,8 +57,8 @@ export const SignIn: React.FC = observer(() => {
         <MainLogo style={[styles.mainLogo, {marginTop: safeAreaInsets.top + headerHeight}]} />
 
         <View style={styles.inputContainer}>
-          <Input {...emailFormInput.inputProps} style={styles.input} label={UIHelper.formatMessage("SignIn-emailInputLabel")} placeholderTextColor="lightgray" />
-          <Input {...passwordFormInput.inputProps} style={styles.input} label={UIHelper.formatMessage("SignIn-passwordInputLabel")} secureTextEntry={true} placeholderTextColor="lightgray" />
+          <Input {...emailFormInput.inputProps} style={styles.input} label={UIHelper.formatMessage("Sign-emailInputLabel")} placeholderTextColor="lightgray" />
+          <Input {...passwordFormInput.inputProps} style={styles.input} label={UIHelper.formatMessage("Sign-passwordInputLabel")} secureTextEntry={true} placeholderTextColor="lightgray" />
         </View>
 
         <View style={styles.buttonWrapper}>

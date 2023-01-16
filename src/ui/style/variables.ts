@@ -14,8 +14,8 @@ const midGreyColor = "rgb(133,139,151)";
 const whiteColor = "rgb(255,255,255)";
 
 const headingOne: DynamicTextStyle = {
-  fontFamily: "SourceSansPro-Bold",
-  fontSize: 26,
+  //fontFamily: "SourceSansPro-Bold",
+  //fontSize: 26,
   color: new DynamicValue(blackColor, lightGreyColor),
 };
 

@@ -8,7 +8,10 @@ import {Text} from "../../components/text/Text";
 import {UIHelper} from "../../utils/UIHelper";
 import {themedStyles} from "./Home.styles";
 
-export const Home: React.FC = observer(() => {
+import { HamburgerButtonProps } from "../../components/hamburgerButton/HamburgerButton";
+import { HamburgerButton } from "../../components/hamburgerButton/HamburgerButton";
+
+export const Home: React.FC<HamburgerButtonProps> = observer((props) => {
   const dataStore = DataStore.getInstance();
   const styles = useDynamicStyleSheet(themedStyles);
 
@@ -43,10 +46,16 @@ export const Home: React.FC = observer(() => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      {dataStore.authenticationState.loadingUser ? <ActivityIndicator /> : <Text>{UIHelper.formatMessage("Welcome-welcomeMessage", {userName})}</Text>}
+    <View style={styles.container} >
 
-      <Text>{UIHelper.formatMessage("Home-title")}</Text>
+      <View style={styles.container}>
+
+        {dataStore.authenticationState.loadingUser ? <ActivityIndicator /> : <Text>{UIHelper.formatMessage("Welcome-welcomeMessage", {userName})}</Text>}
+        
+        <Text>{UIHelper.formatMessage("Home-title")}</Text>
+      </View>
+
     </View>
+
   );
 });

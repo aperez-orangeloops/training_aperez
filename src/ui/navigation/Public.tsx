@@ -48,7 +48,7 @@ export const Public: React.FC = () => {
   );
 
   return (
-    <Stack.Navigator headerMode="screen" screenOptions={screenOptions}>
+    <Stack.Navigator screenOptions={screenOptions}>
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="SignUp" component={SignUp} />

@@ -34,6 +34,12 @@ export type SignInRequest = {
   email: string;
   password: string;
 };
+export type SignUpRequest = {
+  name: string,
+  email: string;
+  password: string;
+ // upload?: Maybe["Upload"];
+};
 export type SuccessfulSignInResponse = {
   success: true;
   accessToken: Models.AccessToken;
@@ -42,4 +48,14 @@ export type FailedSignInResponse = {
   success: false;
   error: Errors.NetworkError | Errors.GenericError;
 };
+export type SuccessfulSignUpResponse = {
+  success: true;
+  accessToken: Models.AccessToken;
+};
+export type FailedSignUpResponse = {
+  success: false;
+  error: Errors.NetworkError | Errors.GenericError;
+};
 export type SignInResponse = SuccessfulSignInResponse | FailedSignInResponse;
+
+export type SignUpResponse = SuccessfulSignUpResponse | FailedSignUpResponse;

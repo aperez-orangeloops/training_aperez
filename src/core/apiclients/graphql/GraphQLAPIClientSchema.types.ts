@@ -29,7 +29,7 @@ export type QueryUserArgs = {
 export type Mutation = {
   __typename?: "Mutation";
   _?: Maybe<Scalars["Boolean"]>;
-  signUp?: Maybe<Void>;
+  signUp?: Maybe<AccessToken>;
   signIn?: Maybe<AccessToken>;
   refreshTokens?: Maybe<AccessToken>;
   checkEmail?: Maybe<CheckEmail>;
@@ -232,7 +232,7 @@ export type QueryResolvers<ContextType = {headers?: Record<string, string | unde
 
 export type MutationResolvers<ContextType = {headers?: Record<string, string | undefined>}, ParentType extends ResolversParentTypes["Mutation"] = ResolversParentTypes["Mutation"]> = {
   _?: Resolver<Maybe<ResolversTypes["Boolean"]>, ParentType, ContextType>;
-  signUp?: Resolver<Maybe<ResolversTypes["Void"]>, ParentType, ContextType, RequireFields<MutationSignUpArgs, "name" | "email" | "password">>;
+  signUp?: Resolver<Maybe<ResolversTypes["AccessToken"]>, ParentType, ContextType, RequireFields<MutationSignUpArgs, "name" | "email" | "password">>;
   signIn?: Resolver<Maybe<ResolversTypes["AccessToken"]>, ParentType, ContextType, RequireFields<MutationSignInArgs, "email" | "password" | "generateRefreshToken">>;
   refreshTokens?: Resolver<Maybe<ResolversTypes["AccessToken"]>, ParentType, ContextType, RequireFields<MutationRefreshTokensArgs, "token">>;
   checkEmail?: Resolver<Maybe<ResolversTypes["CheckEmail"]>, ParentType, ContextType, RequireFields<MutationCheckEmailArgs, "email">>;
