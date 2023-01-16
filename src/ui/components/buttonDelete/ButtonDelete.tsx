@@ -13,7 +13,7 @@ export const ButtonDelete = () => {
   return (
     <View style={styles.button}>
       <IconDelete/>
-      <Text style={styles.text}>{UIHelper.formatMessage("Welcome-DeleteTitle")}</Text>
+      <Text style={styles.text}>{UIHelper.formatMessage("ButtonDelete-DeleteTitle")}</Text>
     </View>
   ); 
 };

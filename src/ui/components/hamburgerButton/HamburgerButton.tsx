@@ -1,8 +1,7 @@
 import * as React from "react";
 import {DrawerNavigationProp} from "@react-navigation/drawer/src/types";
 import {observer} from "mobx-react-lite";
-import {View,ScrollView, Text, SafeAreaView} from "react-native";
-
+import {SafeAreaView} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
 import {TouchableOpacity} from "react-native-gesture-handler";
 
@@ -18,9 +17,9 @@ export const HamburgerButton: React.FC<HamburgerButtonProps> = observer((props) 
 
   return (
     <SafeAreaView> 
-    <TouchableOpacity style={styles.hamburgerContainer} onPress={props.navigation.openDrawer}>
-      <Hamburger style={styles.hamburgerIcon} />
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.hamburgerContainer} onPress={props.navigation.openDrawer}>
+        <Hamburger style={styles.hamburgerIcon} />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 });

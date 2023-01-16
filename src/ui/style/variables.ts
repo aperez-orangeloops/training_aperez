@@ -34,7 +34,7 @@ const headingThree: DynamicTextStyle = {
 const body: DynamicTextStyle = {
   fontFamily: "SourceSansPro-Regular",
   fontSize: 16,
-  color: new DynamicValue("#0000", "#ffff"),
+  color: new DynamicValue(blackColor, whiteColor),
 };
 
 const caption: DynamicTextStyle = {

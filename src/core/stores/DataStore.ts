@@ -5,7 +5,7 @@ import intl, {ReactIntlUniversalOptions} from "react-intl-universal";
 
 import {GraphQLAPIClient} from "../apiclients/graphql/GraphQLAPIClient";
 import {RefreshTokenRequest, RefreshTokenResponse} from "../apiclients/graphql/GraphQLAPIClient.types";
-import {FetchUserRequest, FetchUserResponse, SignInRequest, SignInResponse} from "../apiclients/graphql/GraphQLAPIClient.types";
+import {FetchUserRequest, FetchUserResponse, SignInRequest, SignInResponse, SignUpRequest, SignUpResponse} from "../apiclients/graphql/GraphQLAPIClient.types";
 import {AppConfig} from "../AppConfig";
 import {Locale} from "../locales/Locale";
 import * as Models from "../models";
@@ -16,6 +16,7 @@ export type AuthenticationState = {
   accessToken?: Models.AccessToken;
   loadingSignIn: boolean;
   loadingUser: boolean;
+  loadingSignUp: boolean;
 };
 
 export class DataStore {
@@ -29,6 +30,7 @@ export class DataStore {
   private authenticationInitialState: AuthenticationState = {
     loadingSignIn: false,
     loadingUser: false,
+    loadingSignUp: false,
   };
 
   @observable authenticationState: AuthenticationState = _.cloneDeep(this.authenticationInitialState);
@@ -164,6 +166,20 @@ export class DataStore {
   }
 
   @action
+  async signUp(request: SignUpRequest): Promise<SignUpResponse> {
+    this.authenticationState.loadingSignUp = true;
+
+    const response = await GraphQLAPIClient.signUp(request);
+
+    runInAction(() => {
+      this.authenticationState.loadingSignUp = false;
+      if (response.success) this.authenticationState.accessToken = response.accessToken;
+    });
+
+    return response;
+  }
+
+  @action
   async fetchUser(request: FetchUserRequest): Promise<FetchUserResponse> {
     this.authenticationState.loadingUser = true;
 
@@ -174,7 +190,7 @@ export class DataStore {
 
       if (response.success) this.authenticationState.user = response.user;
     });
-
+    
     return response;
   }
 

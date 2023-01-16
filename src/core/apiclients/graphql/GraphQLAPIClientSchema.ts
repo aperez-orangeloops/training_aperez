@@ -18,7 +18,7 @@ export const typeDefs = gql`
 
   type Mutation {
     _: Boolean
-    signUp(name: String!, email: String!, password: String!, upload: Upload): Void
+    signUp(name: String!, email: String!, password: String!, upload: Upload): AccessToken
     signIn(email: String!, password: String!, generateRefreshToken: Boolean = false): AccessToken
     refreshTokens(token: String!): AccessToken
     checkEmail(email: String!): CheckEmail

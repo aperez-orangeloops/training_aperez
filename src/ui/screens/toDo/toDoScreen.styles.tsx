@@ -1,6 +1,5 @@
 import {DynamicStyleSheet} from "react-native-dark-mode";
 
-
 export const themedStyles = new DynamicStyleSheet({
   container: {
     display: "flex",

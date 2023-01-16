@@ -140,6 +140,7 @@ export class BaseGraphQLAPIClient {
         .then(async (rawResponse) => ({success: true as true, request, rawResponse}))
         .catch(async (rawResponse) => ({success: false as false, request, rawResponse}));
     else
+
       return client
         .mutate({
           context: {

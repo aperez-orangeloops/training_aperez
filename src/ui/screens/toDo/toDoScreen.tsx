@@ -14,8 +14,6 @@ import {ToDoListFooter} from "../../components/toDoListFooter/ToDoListFooter";
 import {themedStyles} from "./toDoScreen.styles";
 
 
-
-
 export const ToDoScreen = (props:any) => {
   const styles = useDynamicStyleSheet(themedStyles);
   const [filter, setFilter] = useState(0);
@@ -71,34 +69,34 @@ export const ToDoScreen = (props:any) => {
 
         <View style={theme == 'light' ? styles.taskStyles : styles.taskStylesDark}>
           <View>
-          <ScrollView>
-            {taskItems.map((item, index) => {
-              {if ( (item.completed && filter == 2) || ( !item.completed && filter == 1 ) || (filter == 0) ) {
-                empty = false;
-                return(
-                    <View>
-                      <ToDoListItem theme={theme} key={item.id} todo={item} onCompletedChange={() => onCompletedChange(item.completed,index)} />
-                    </View>
-                )
-                }   
+            
+            <ScrollView>
+              {taskItems.map((item, index) => {
+                {if ( (item.completed && filter == 2) || ( !item.completed && filter == 1 ) || (filter == 0) ) {
+                  empty = false;
+                  return(
+                      <View>
+                        <ToDoListItem theme={theme} key={item.id} todo={item} onCompletedChange={() => onCompletedChange(item.completed,index)} />
+                      </View>
+                  )
+                  }   
+                }
+              })
               }
-            })
+            </ScrollView>
+
+            {empty &&
+            (<View style={styles.Empty }>
+              <Text style={theme == 'light' ? styles.TextE : styles.TextEDark}>{UIHelper.formatMessage("ToDoScreen-NoTaskMessage")}</Text>
+            </View>)
             }
-
-
-          </ScrollView>
-          {empty &&
-          (<View style={styles.Empty }>
-            <Text style={theme == 'light' ? styles.TextE : styles.TextEDark}>{UIHelper.formatMessage("Welcome-NoTaskMessage")}</Text>
-          </View>)
-          }
         </View>
 
         </View>
         </View>
 
       <View>
-        <View style={theme == 'light' ? styles.rectangle : styles.rectangleDark}  ></View>
+        <View style={theme == 'light' ? styles.rectangle : styles.rectangleDark}></View>
         <ToDoListFooter theme={theme} filter={filter} onFilterChange={onFilterChange} onToDoCreated={onToDoCreated}> </ToDoListFooter>
       </View>
     </SafeAreaView>

@@ -5,7 +5,6 @@ import {createSwitchNavigator} from "./createSwitchNavigator";
 import {Main} from "./Main";
 import {Public} from "./Public";
 import {NavigatorRouteParamList, NavigatorRoutes, Routes} from "./Routes";
-import { HamburgerButton } from "../components/hamburgerButton/HamburgerButton";
 
 
 type ScreensStackParamList = NavigatorRouteParamList<NavigatorRoutes<Routes>["Screens"]>;

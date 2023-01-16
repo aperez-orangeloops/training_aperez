@@ -1,17 +1,23 @@
 import React,{useState} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 
 import {UIHelper} from "../../utils/UIHelper";
 
 import { ToDo } from "core/models/ToDo";
+import { ButtonFooter } from "../buttonFooter/ButtonFooter";
 
 import { FooterStyles } from "./ToDoListFooter.styles";
 
 import IconPlus from "../../assets/add-outline (1) 1.svg" 
 
 
+export enum ToDoListFilter {
+  All, 
+  Active,
+  Completed,
+}
 
 export const ToDoListFooter = (props: any) => {
   const styles = useDynamicStyleSheet(FooterStyles);
@@ -26,12 +32,6 @@ export const ToDoListFooter = (props: any) => {
   const {theme, filter, onFilterChange, onToDoCreated} = props;
  
 
-  enum ToDoListFilter {
-    All, 
-    Active,
-    Completed,
-  }
-
   const createTask = () => {
     let t = text.trim();
     if (t == '' || t == ' ')
@@ -44,37 +44,18 @@ export const ToDoListFooter = (props: any) => {
     setId(id+1);
   } 
 
-
   return (
     <View style={theme == 'light' ? styles.footer : styles.footerDark}>
         <View style={theme == 'light' ? styles.buttonscontainer : styles.buttonscontainerDark}>
-        
-        <TouchableOpacity onPress={() => {onFilterChange(ToDoListFilter.All)}}>
-            <View style={ theme == 'light' ? (filter ==  ToDoListFilter.All ? styles.buttonN : styles.button)
-                 : (filter ==  ToDoListFilter.All ? styles.buttonN : styles.buttonDark) }>
-                <Text style={theme == 'light' ?  (filter == ToDoListFilter.All ? styles.textN : styles.text) : 
-                            styles.textN}>{UIHelper.formatMessage("Welcome-AllButton")}</Text>
-            </View>      
-        </TouchableOpacity>  
-        
-        <TouchableOpacity onPress={() => {onFilterChange(ToDoListFilter.Active)}}>
-            <View style={theme == 'light' ? filter == ToDoListFilter.Active ? styles.buttonN : styles.button
-            : filter == ToDoListFilter.Active ? styles.buttonN : styles.buttonDark}>
-                <Text style={theme == 'light' ?  filter == ToDoListFilter.Active ? styles.textN : styles.text : styles.textN}>{UIHelper.formatMessage("Welcome-ActiveButton")}</Text>
-            </View>
-        </TouchableOpacity>  
-        
-        <TouchableOpacity onPress={() => {onFilterChange(ToDoListFilter.Completed)}}>
-            <View style={theme == 'light' ?  filter == ToDoListFilter.Completed ? styles.buttonN : styles.button :
-                   filter == ToDoListFilter.Completed ? styles.buttonN : styles.buttonDark }>
-                <Text style={theme == 'light' ?  filter == ToDoListFilter.Completed ? styles.textN : styles.text: styles.textN}>{UIHelper.formatMessage("Welcome-CompletedButton")}</Text>
-            </View>
-        </TouchableOpacity>  
+
+          <ButtonFooter filter={filter} onFilterChange={onFilterChange} type={ToDoListFilter.All} theme={theme} name={"ToDoListFooter-AllButton"}/>
+          <ButtonFooter filter={filter} onFilterChange={onFilterChange} type={ToDoListFilter.Active} theme={theme} name={"ToDoListFooter-ActiveButton"}/>     
+          <ButtonFooter filter={filter} onFilterChange={onFilterChange} type={ToDoListFilter.Completed} theme={theme} name={"ToDoListFooter-CompletedButton"}/>
 
         </View>
 
         <View style={styles.input}>
-            <TextInput value={text} style={theme == 'light' ? styles.boxInput : styles.boxInputDark}  placeholder={UIHelper.formatMessage("Welcome-PlaceholderLabel")} 
+            <TextInput value={text} style={theme == 'light' ? styles.boxInput : styles.boxInputDark}  placeholder={UIHelper.formatMessage("ToDoListFooter-PlaceholderLabel")} 
                 onSubmitEditing={createTask} onChangeText={text => setText(text)} ></TextInput> 
            
             <TouchableOpacity onPress={createTask} >
@@ -88,5 +69,3 @@ export const ToDoListFooter = (props: any) => {
   </View>
   );
 };
-
-

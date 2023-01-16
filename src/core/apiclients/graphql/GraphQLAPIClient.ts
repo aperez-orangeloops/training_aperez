@@ -8,7 +8,8 @@ import gql from "graphql-tag";
 import {AppConfig} from "../../AppConfig";
 import * as Models from "../../models";
 import {BaseGraphQLAPIClient, BaseGraphQLAPIClientContext, BaseGraphQLAPIResponse, BaseGraphQLRequestConfig, RequestMethod, RequestOptions} from "./BaseGraphQLAPIClient";
-import {FetchUserRequest, FetchUserResponse, RefreshTokenRequest, RefreshTokenResponse, SignInRequest, SignInResponse} from "./GraphQLAPIClient.types";
+import {FetchUserRequest, FetchUserResponse, RefreshTokenRequest, RefreshTokenResponse, SignInRequest, SignInResponse, SignUpRequest, SignUpResponse} from "./GraphQLAPIClient.types";
+import { MutationSignUpArgs } from "./GraphQLAPIClientSchema.types";
 
 export type GraphQLAPIClientConfigureClientOptions = {
   userAgent: string;
@@ -105,6 +106,7 @@ export class GraphQLAPIClient extends BaseGraphQLAPIClient {
   }
 
   static async fetchUser(request: FetchUserRequest, options: RequestOptions = {}): Promise<FetchUserResponse> {
+
     const response = await this.request({
       request,
       requestMethod: "query",
@@ -166,7 +168,7 @@ export class GraphQLAPIClient extends BaseGraphQLAPIClient {
 
       if (data && data.signIn) {
         return {
-          success: true,
+          success: true, 
           accessToken: Models.AccessToken.fromJSON(data.signIn),
         };
       }
@@ -177,6 +179,52 @@ export class GraphQLAPIClient extends BaseGraphQLAPIClient {
       error: !response.success && this.isNetworkError(response.rawResponse) ? this.networkError() : this.genericError(),
     };
   }
+
+  static async signUp(request: SignUpRequest, options: RequestOptions = {}): Promise<SignUpResponse> {
+
+    const variables: MutationSignUpArgs = {
+      name: request.name,
+      email: request.email,
+      password: request.password,
+      //upload: request.upload,
+    };
+    const response = await this.request({
+      request,
+      requestMethod: "mutation",
+      gql: gql`
+        mutation signUp($name: String!, $email: String!, $password: String!) {
+          signUp(name: $name, email: $email, password: $password) {
+            token
+            refreshToken
+            expiresAt
+          }
+        }
+      `,
+      variables,
+      context: {},
+      options,
+    });
+
+    if (response.success) {
+      const {data} = response.rawResponse;
+
+
+      if (data && data.signUp) {
+
+        return {
+          success: true,
+          accessToken: Models.AccessToken.fromJSON(data.signUp),
+        };
+      }
+    }
+
+    return {
+      success: false,
+      error: !response.success && this.isNetworkError(response.rawResponse) ? this.networkError() : this.genericError(),
+    };
+
+  }
+
 
   static async refreshToken(request: RefreshTokenRequest, options: RequestOptions = {}): Promise<RefreshTokenResponse> {
     const response = await this.request({
