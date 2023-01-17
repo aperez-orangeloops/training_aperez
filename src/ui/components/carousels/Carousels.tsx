@@ -1,9 +1,10 @@
 import React from "react";
 import {Text, View, Dimensions} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
-import Carousel , {Pagination} from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
 import { Image } from "react-native";
 import YoutubePlayer from 'react-native-youtube-iframe'
+import PaginationDot from 'react-native-animated-pagination-dot'
 
 import { themedStyles } from "../carousels/Carousels.styles";
 
@@ -44,7 +45,7 @@ export const Carousels = (items : any) => {
 
   return (
     <View>
-      <View style={{height:  450}} >
+      <View style={{height:  500}} >
         <Carousel 
           layout="default"
           ref={isCarousel}
@@ -59,14 +60,14 @@ export const Carousels = (items : any) => {
           onSnapToItem={(index) => setIndex(index)}
           />
       </View>
-
-      <Pagination
-        dotsLength={items.items.length}
-        activeDotIndex={index}
-        dotStyle={styles.DotStyle}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
+      <View style={{marginLeft: 190}}>
+        <PaginationDot
+          activeDotColor={styles.DotColor.color}
+          curPage={index}
+          maxPage={items.items.length}
         />
+      </View>
+
     </View>
   );
 };

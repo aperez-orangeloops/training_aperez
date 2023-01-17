@@ -118,6 +118,7 @@
     "react": "16.13.1",
     "react-intl-universal": "2.2.5",
     "react-native": "0.62.2",
+    "react-native-animated-pagination-dot": "^0.4.0",
     "react-native-bundle-splitter": "1.0.7",
     "react-native-config": "1.0.0",
     "react-native-dark-mode": "0.2.2",

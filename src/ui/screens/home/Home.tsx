@@ -4,14 +4,14 @@ import {ActivityIndicator, Alert, View} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
 
 import {DataStore} from "../../../core/stores/DataStore";
-import {Text} from "../../components/text/Text";
 import {UIHelper} from "../../utils/UIHelper";
-import {themedStyles} from "./Home.styles";
-
-import { HamburgerButtonProps } from "../../components/hamburgerButton/HamburgerButton";
+import {Text} from "../../components/text/Text";
 import { HamburgerButton } from "../../components/hamburgerButton/HamburgerButton";
 
-export const Home: React.FC<HamburgerButtonProps> = observer((props) => {
+import {themedStyles} from "./Home.styles";
+
+
+export const Home: React.FC = observer((props:any) => {
   const dataStore = DataStore.getInstance();
   const styles = useDynamicStyleSheet(themedStyles);
 
@@ -47,6 +47,9 @@ export const Home: React.FC<HamburgerButtonProps> = observer((props) => {
 
   return (
     <View style={styles.container} >
+        <View style={{marginRight: 320}}>
+         <HamburgerButton navigation={props.navigation}/> 
+        </View>
 
       <View style={styles.container}>
 

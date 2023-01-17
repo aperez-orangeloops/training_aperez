@@ -55,5 +55,8 @@ export const themedStyles = new DynamicStyleSheet({
         borderRadius: 5,
         marginHorizontal: 0,
         backgroundColor: new DynamicValue("rgb(42,45,51)", "rgb(255,255,255)"),
+      },
+      DotColor: {
+        color: new DynamicValue("rgb(42,45,51)", "rgb(255,255,255)")
       }
 });

@@ -16,7 +16,7 @@ import {themedStyles} from "./HamburgerScreen.styles";
 
 export const HamburgerScreen: React.FC<HamburgerButtonProps>  = observer((props) =>  {
   const styles = useDynamicStyleSheet(themedStyles);
-
+  
   return (
     <View style={styles.container}>
 

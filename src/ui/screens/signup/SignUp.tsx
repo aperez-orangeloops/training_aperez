@@ -1,25 +1,26 @@
 import {observer} from "mobx-react";
-import * as React from "react";
+import React from "react";
 import {View} from "react-native";
 import {useDynamicStyleSheet} from "react-native-dark-mode";
 import {useFocusEffect} from "@react-navigation/native";
 import {useHeaderHeight} from "@react-navigation/stack";
-import {NavigatorRoutes, Routes, StackScreenProps} from "../../navigation/Routes";
 import {preload} from "react-native-bundle-splitter";
 import {useSafeArea} from "react-native-safe-area-context";
-import {NavigationHelper} from "../../navigation/NavigationHelper";
+//import {NavigationHelper} from "../../navigation/NavigationHelper";
 
 import {useFormInput} from "../../hooks/useFormInput";
-
+import {NavigatorRoutes, Routes, StackScreenProps} from "../../navigation/Routes";
 import {UIHelper} from "../../utils/UIHelper";
 import {DataStore} from "../../../core/stores/DataStore";
-import MainLogo from "../../assets/companyLogo.svg";
+
 import {Button} from "../../components/button/Button";
 import {Input} from "../../components/input/Input";
 import {KeyboardAwareScrollView} from "../../components/keyboardawarescrollview/KeyboardAwareScrollView";
 import { HamburgerButton } from "../../components/hamburgerButton/HamburgerButton";
 
+
 import {themedStyles} from "./SignUp.styles";
+import MainLogo from "../../assets/companyLogo.svg";
 
 export type SignUpProps = StackScreenProps<NavigatorRoutes<NavigatorRoutes<Routes>["Screens"]>["Public"], "SignUp">;
 
@@ -41,6 +42,7 @@ export const SignUp: React.FC< SignUpProps> = observer((props: any) => {
   );
 
   const handleSignUp = React.useCallback(async () => {
+
     if (authenticationState.loadingSignUp) return;
 
     const signUpResponse = await dataStore.signUp({
@@ -49,8 +51,11 @@ export const SignUp: React.FC< SignUpProps> = observer((props: any) => {
       password: passwordFormInput.inputProps.value,
     });
 
-  
-    if (signUpResponse.success) NavigationHelper.navigateTo({screen: "Main", params: {screen: "Home"}});
+    if (signUpResponse.success){
+      props.navigation.navigate("Home", {params: nameFormInput.inputProps.value })
+    }
+
+    //if (signUpResponse.success) NavigationHelper.navigateTo({screen: "Main", params: ({screen: "Home" , params: props.navigation} ) });
     else alert(UIHelper.formatMessage("SignUp-unsuccessfulSignUpMessage"));
   }, [emailFormInput.inputProps.value, nameFormInput.inputProps.value, passwordFormInput.inputProps.value]);
 
